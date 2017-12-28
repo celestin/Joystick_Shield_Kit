@@ -12,7 +12,7 @@
 */
 
 //Create variables for each button on the Joystick Shield to assign the pin numbers
-char button0=3, button1=4, button2=5, button3=6;
+char button0=3, button1=4, button2=5, button3=6, button4=7, button5=8;
 char sel=2;
 
 void setup(void)
@@ -32,6 +32,12 @@ void setup(void)
   pinMode(button3, INPUT);      //Set the Joystick button 3 as an input
   digitalWrite(button3, HIGH);  //Enable the pull-up resistor on button 3
   
+  pinMode(button4, INPUT);      //Set the Joystick button 2 as an input
+  digitalWrite(button4, HIGH);  //Enable the pull-up resistor on button 2
+
+  pinMode(button5, INPUT);      //Set the Joystick button 3 as an input
+  digitalWrite(button5, HIGH);  //Enable the pull-up resistor on button 3
+  
   Serial.begin(9600);           //Turn on the Serial Port at 9600 bps
 }
 
@@ -45,7 +51,9 @@ void loop(void)
   Serial.print(digitalRead(button0));   //Read the value of the button 0 and print it on the serial port.
   Serial.print(digitalRead(button1));   //Read the value of the button 1 and print it on the serial port.
   Serial.print(digitalRead(button2));   //Read the value of the button 2 and print it on the serial port.
-  Serial.println(digitalRead(button3)); //Read the value of the button 3 and print it on the serial port.
+  Serial.print(digitalRead(button3)); //Read the value of the button 3 and print it on the serial port.
+  Serial.print(digitalRead(button4));   //Read the value of the button 2 and print it on the serial port.
+  Serial.println(digitalRead(button5)); //Read the value of the button 3 and print it on the serial port.
   
   //Wait for 100 ms, then go back to the beginning of 'loop' and repeat.
   delay(100);
